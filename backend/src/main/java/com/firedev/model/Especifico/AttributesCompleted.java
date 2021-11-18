@@ -1,5 +1,6 @@
 package com.firedev.model.Especifico;
 
+<<<<<<< HEAD
 import com.firedev.model.Attributes;
 
 public class AttributesCompleted  extends Attributes{
@@ -53,4 +54,8 @@ public class AttributesCompleted  extends Attributes{
 	
 	
 	
+=======
+public class AttributesCompleted {
+
+>>>>>>> 723a34dcc33f8b2f1f749e8b0d5f548f752ce8c1
 }

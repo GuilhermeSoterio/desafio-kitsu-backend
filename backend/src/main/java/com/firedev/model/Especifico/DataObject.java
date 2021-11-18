@@ -1,5 +1,6 @@
 package com.firedev.model.Especifico;
 
+<<<<<<< HEAD
 import com.firedev.model.Anime;
 
 public class DataObject {
@@ -42,4 +43,8 @@ public class DataObject {
 	}
 	
 	
+=======
+public class DataObject {
+
+>>>>>>> 723a34dcc33f8b2f1f749e8b0d5f548f752ce8c1
 }
