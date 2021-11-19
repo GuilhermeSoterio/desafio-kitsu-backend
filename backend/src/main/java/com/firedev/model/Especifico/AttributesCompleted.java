@@ -12,8 +12,8 @@ public class AttributesCompleted  extends Attributes{
 	public AttributesCompleted() {
 	}
 	
-	public AttributesCompleted(String ratingRank, String averageRaging, String synopsis, String episodeCount) {
-		super();
+	public AttributesCompleted(String canonicalTitle, String ratingRank, String averageRaging, String synopsis, String episodeCount) {
+		super(canonicalTitle);
 		this.ratingRank = ratingRank;
 		this.averageRaging = averageRaging;
 		this.synopsis = synopsis;

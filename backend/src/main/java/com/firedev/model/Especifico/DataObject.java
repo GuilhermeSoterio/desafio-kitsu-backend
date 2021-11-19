@@ -11,7 +11,6 @@ public class DataObject {
 	}
 	
 	public DataObject(String id, String type, AttributesCompleted attributes) {
-		super();
 		this.id = id;
 		this.type = type;
 		this.attributes = attributes;
