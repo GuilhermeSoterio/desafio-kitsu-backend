@@ -1,21 +1,20 @@
 package com.firedev.model.Especifico;
 
-<<<<<<< HEAD
 import com.firedev.model.Anime;
 
 public class DataObject {
 	private String id;
 	private String type;
-	private Anime anime;
+	private AttributesCompleted attributes;
 	
 	public DataObject() {
 	}
 	
-	public DataObject(String id, String type, Anime anime) {
+	public DataObject(String id, String type, AttributesCompleted attributes) {
 		super();
 		this.id = id;
 		this.type = type;
-		this.anime = anime;
+		this.attributes = attributes;
 	}
 
 	public String getId() {
@@ -34,17 +33,13 @@ public class DataObject {
 		this.type = type;
 	}
 
-	public Anime getAnime() {
-		return anime;
+	public AttributesCompleted getAttributes() {
+		return attributes;
 	}
 
-	public void setAnime(Anime anime) {
-		this.anime = anime;
+	public void setAttributes(AttributesCompleted attributes) {
+		this.attributes = attributes;
 	}
 	
-	
-=======
-public class DataObject {
 
->>>>>>> 723a34dcc33f8b2f1f749e8b0d5f548f752ce8c1
 }
