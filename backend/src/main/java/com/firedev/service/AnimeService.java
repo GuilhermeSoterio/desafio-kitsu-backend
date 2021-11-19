@@ -38,7 +38,7 @@ public interface AnimeService {
 	@GetMapping("/manga/{idDoManga}")
 	Data BuscarUmManga(@PathVariable("idDoManga") String idDoManga);
 
-	@GetMapping("/anime/{idDoEpisodio}/episodes")
+	@GetMapping("/episodes/{idDoEpisodio}")
 	Data BuscarUmEpisodio(@PathVariable("idDoEpisodio") String idDoEpisodio);
 	
 	
