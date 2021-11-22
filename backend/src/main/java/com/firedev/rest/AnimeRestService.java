@@ -1,5 +1,7 @@
 package com.firedev.rest;
 
+import java.time.Instant;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,8 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.firedev.model.Attributes;
 import com.firedev.model.DataResponse;
+import com.firedev.model.Pesquisa;
 import com.firedev.model.Especifico.Data;
+import com.firedev.repository.PesquisaRepository;
 import com.firedev.service.AnimeService;
 
 @RestController
@@ -16,6 +21,9 @@ public class AnimeRestService {
 
 	@Autowired
 	private AnimeService animeService;
+	
+	@Autowired
+	private PesquisaRepository pesquisaRepository;
 
 	@GetMapping("/animesPopulares")
 	public ResponseEntity<DataResponse> animesPopulares() {
@@ -32,7 +40,15 @@ public class AnimeRestService {
 
 	@GetMapping("/titulo{search}")
 	public ResponseEntity<DataResponse> buscaTitulos(@RequestParam String search) {
+		
+		Pesquisa pesquisa = new Pesquisa();
+		pesquisa.setBusca(search);
+		pesquisa.setMoment(Instant.now());
+		pesquisaRepository.insertBuscaNoBD(pesquisa);
+		
+		
 		DataResponse dataResponse = animeService.PesquisaPorTitulo(search);
+		
 		return dataResponse != null ? ResponseEntity.ok().body(dataResponse) : ResponseEntity.notFound().build(); 
 	}
 	
