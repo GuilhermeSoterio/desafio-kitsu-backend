@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.firedev.model.DataResponse;
 import com.firedev.model.Especifico.Data;
-import com.firedev.model.Especifico.DataObject;
 import com.firedev.service.AnimeService;
 
 @RestController
@@ -31,13 +30,13 @@ public class AnimeRestService {
 	}
 	
 
-	@GetMapping("/titulo")
+	@GetMapping("/titulo{search}")
 	public ResponseEntity<DataResponse> buscaTitulos(@RequestParam String search) {
 		DataResponse dataResponse = animeService.PesquisaPorTitulo(search);
 		return dataResponse != null ? ResponseEntity.ok().body(dataResponse) : ResponseEntity.notFound().build(); 
 	}
 	
-	@GetMapping("/categoria")
+	@GetMapping("/categoria{filter}")
 	public ResponseEntity<DataResponse> buscarCategorias(@RequestParam String filter) {
 		DataResponse dataResponse = animeService.FiltrarPorCategoria(filter);
 		return dataResponse != null ? ResponseEntity.ok().body(dataResponse) : ResponseEntity.notFound().build(); 
