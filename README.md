@@ -17,7 +17,11 @@ Para o problema proposto o primeiro passo foi realizar uma análise da API com a
 Aps essa verificação, com as rotas já pré selecionadas, foi necessário então encontrar um framework que fizesse o consumo dessa API e o manipulasse com  o <b>SpringBoot</b> em Java.
 Para esse objetivo foi utilizado o framework <b>Open-Feign</b>.
 
-Encontrado essas respostas, então agora seria preciso desenhar uma forma arquitetural de quais camadas iriam ser necessárias, visto que também faria parte do problema a implantação de uma Estrutura no <b>Banco de dados</b>. Feito isso, a estrutura ficou dividida da seguinte forma: Camada Model, camada Services, camada Repository e camada Rest.
+Encontrado essas respostas, então criei a arquitetura de camadas iriam necessárias, considerando a parte do problema a implantação de uma Estrutura no <b>Banco de dados</b>. A estrutura ficou dividida da seguinte forma: Camada Model, camada Services, camada Repository e camada Rest.
+<br>- <b>Camada Model</b> contendo as entidades de modelo para a API.
+<br>- <b>Camada Service</b> está comunicando com os modelos e e com a RestService com a lógica das consultas da API
+<br>- <b>Camada Repository</b> responsável por fazer consultas no banco de dados.
+<br>- <b>Camada Rest Service</b> está contida todas as rotas tratadas e implementadas pelo Service
 
 ## 💻 Tecnologias
 As seguintes tecnologias foram utilizadas na construção do projeto:
