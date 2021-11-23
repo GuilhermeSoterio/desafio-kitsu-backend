@@ -1,5 +1,5 @@
 <h2 align="center">
-  Desafio Kitsu - Firedev IT :coffee: :seedling:
+  🔥 Desafio Kitsu - Firedev IT :coffee: 🔥
 </h2>
 
 <p align="center">
@@ -49,7 +49,9 @@ INSERT INTO tb_pesquisa(id, moment, busca) VALUES (null, NOW(), "Naruto");
 # Gerando relatório
 SELECT  distinct id, CONCAT(busca, "(",count(id),")") AS quantidade FROM tb_pesquisa GROUP BY busca ORDER BY count(id) DESC;
 ```
-
+<p align="center">
+  <img src="Relatorio-mysql.png" width="350">
+</p>
 ## 📝 Documentação
 ### -Documentação das classes
 Para documentar o código, foi utilizado o Javadoc. Acesse a pasta doc, e execute o arquivo: "index.html" para poder abrir toda a documentação formatada pelo javadoc.
