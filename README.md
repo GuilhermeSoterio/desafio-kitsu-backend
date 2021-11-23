@@ -14,10 +14,10 @@
 
 ## 💡 Solução
 Para o problema proposto o primeiro passo foi realizar uma análise da API com as rotas necessárias para retornar os dados requisitados.
-Aps essa verificação, com as rotas já pre selecionadas, foi necessário então encontrar um framework que fizesse o consumo dessa API e o manipulasse com  o <b>SpringBoot</b> em Java.
+Aps essa verificação, com as rotas já pré selecionadas, foi necessário então encontrar um framework que fizesse o consumo dessa API e o manipulasse com  o <b>SpringBoot</b> em Java.
 Para esse objetivo foi utilizado o framework <b>Open-Feign</b>.
 
-Encontrado essas respostas, então agora seria preciso desenhar uma forma arquitetural de quais camadas iriam ser necessarias, visto que também faria parte do problema a implantação de uma Estrutura no <b>Banco de dados</b>. Feito isso, a estrutura ficou dividida da seguinte forma: Camada Model, camada Services, camada repository e camada rest.
+Encontrado essas respostas, então agora seria preciso desenhar uma forma arquitetural de quais camadas iriam ser necessárias, visto que também faria parte do problema a implantação de uma Estrutura no <b>Banco de dados</b>. Feito isso, a estrutura ficou dividida da seguinte forma: Camada Model, camada Services, camada Repository e camada Rest.
 
 ## 💻 Tecnologias
 As seguintes tecnologias foram utilizadas na construção do projeto:
@@ -32,7 +32,7 @@ Hospedagem realizada com Heroku:
 ## 📐 Banco de Dados
 Para a solução desse problema, pensei em criar uma tabela que representasse a entidade de pesquisa. Ela contem três atributos: Id, Moment e Busca, utilizando o <b>MySQL</b> então criei essa tabela e com o auxilio do spring integrei o banco de dados a uma classe mapeada pelo JPA com um repository para gerar um gatilho toda vez que a rota de Pesquisa fosse acionada iria criar um registro nessa tabela.
 
-O metodo de inserção no banco de dados, foi criado utilizando o <b>EntityManager</b> que é um serviço que permite sincronizar operações com banco de dados personalizando essas consultas conforme a necessidade.
+O método de inserção no banco de dados, foi criado utilizando o <b>EntityManager</b> que é um serviço que permite sincronizar operações com banco de dados personalizando essas consultas conforme a necessidade.
 
 ### Configurando o Banco de dados:
 ```bash
@@ -75,7 +75,7 @@ https://firedev-guilhermesoterio.herokuapp.com/swagger-ui/index.html
 - [Swagger](https://swagger.io) - framework para documentar as rotas da API.
 
 ## 📈 Testes
-        Foram implementados testes unitarios cobrindo todas as entidades e classes presentes.
+        Foram implementados testes unitários cobrindo todas as entidades e classes presentes.
 <br>• Testes na camada model
 <br>• Testes na camada Service
 <br>• Testes na camada Rest
@@ -86,4 +86,4 @@ Na pasta raiz, navegue para a pasta <b>src</b> > <b>test </b> com o botão direi
 
 ## 🔗 Considerações
 
-Com certeza a experiência de realizar este teste foi bem interessante, particulamente foi bem empolgante todo o seu percurso e os obstaculos que eu tive que ultrapassar durante o desenvolvimento. Quero agradecer muito toda a equipe envolvido e o suporte que me deram, em especial o Guilherme Mallmann que foi bastante presente e empático.
+Com certeza a experiência de realizar este teste foi bem interessante, particularmente foi bem empolgante todo o seu percurso e os obstáculos que eu tive que ultrapassar durante o desenvolvimento. Quero agradecer muito toda a equipe envolvido e o suporte que me deram, em especial o Guilherme Mallmann que foi bastante presente e empático.
