@@ -18,15 +18,13 @@ import com.firedev.service.AnimeService;
 import com.firedev.model.Anime;
 import com.firedev.model.Attributes;
 
+@DisplayName("Testes na camada Service")
 @SpringBootTest
 public class AnimeServiceTest {
 
 	@Autowired
 	private AnimeService animeService;
-	/**
-	 * Cria o objeto que representa o anime OnePice. Ele é o anime top1 dos mais populares
-	 * @return anime One Piece.
-	 */
+
 	private Anime criaOnepice() {
 		Attributes atributos = new Attributes("One Piece");
 		Anime testeOnePice = new Anime("12", "anime", atributos);
@@ -38,13 +36,8 @@ public class AnimeServiceTest {
 		Anime Leveling = new Anime("54114", "manga", atributos);
 		return Leveling;
 	}
-	/**
-	 * Testa a rota de animes populares
-	 * 1.1- Verifica se o objeto Data resposta não é null
-	 * 1.2- Verifica se a lista de animes está vazia
-	 * 1.3- Verifica se o primeiro anime é o One piece(One piece = Anime top1 popular)
-	 * 1.4- Verifica se o atributo type é anime. (É esse atributo que difere os animes dos mangas.)
-	 */
+
+	
 	@Test
 	@DisplayName("Data API \"Animes mais populares\" quando for sucesso")
 	public void testaAnimeServices() {
@@ -83,7 +76,7 @@ public class AnimeServiceTest {
 	@DisplayName("Data API animes buscando por nome")
 	public void testaFiltroPorNome() {
 		DataResponse dataResponse = animeService.PesquisaPorTitulo("one piece");
-
+		
 		Assertions.assertThat(dataResponse.getData()).isNotNull();
 		
 		List<Anime> ListAnimes = dataResponse.getData();
@@ -121,7 +114,6 @@ public class AnimeServiceTest {
 		Attributes atributos = new Attributes("The King of Fighters: Destiny 2");
 		Anime AnimeKingOfFighters = new Anime("40591", "anime", atributos);
 		
-		/*assertEquals(listaDeAnimes, dataresponse.getData());*/
 		assertEquals(data.getData().getAttributes().getCanonicalTitle(), AnimeKingOfFighters.getAttributes().getCanonicalTitle());
 	}
 	
@@ -135,7 +127,6 @@ public class AnimeServiceTest {
 		Attributes atributos = new Attributes("Double-J");
 		Anime doubleJ = new Anime("15", "manga", atributos);
 		
-		/*assertEquals(listaDeAnimes, dataresponse.getData());*/
 		assertEquals(data.getData().getAttributes().getCanonicalTitle(), doubleJ.getAttributes().getCanonicalTitle());
 	}
 	
@@ -150,7 +141,6 @@ public class AnimeServiceTest {
 		Attributes atributos = new Attributes("The Seigaku Regulars Make Their Debut!");
 		Anime Seigaku = new Anime("674", "episodes", atributos);
 		
-		/*assertEquals(listaDeAnimes, dataresponse.getData());*/
 		assertEquals(data.getData().getAttributes().getCanonicalTitle(), Seigaku.getAttributes().getCanonicalTitle());
 	}
 }

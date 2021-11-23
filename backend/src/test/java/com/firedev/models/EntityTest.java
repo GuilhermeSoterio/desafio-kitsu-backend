@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import com.firedev.model.Anime;
 import com.firedev.model.Attributes;
@@ -15,8 +16,9 @@ import com.firedev.model.Especifico.AttributesCompleted;
 import com.firedev.model.Especifico.Data;
 import com.firedev.model.Especifico.DataObject;
 
-public class EntityTest {
 
+public class EntityTest {
+	
 	@Test
 	@DisplayName("Testa entidade Anime")
     public void AnimeTest() {

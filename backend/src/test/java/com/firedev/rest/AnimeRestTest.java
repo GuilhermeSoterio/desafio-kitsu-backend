@@ -4,10 +4,12 @@ import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.standaloneSetup;
 import static org.mockito.Mockito.when;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -17,14 +19,17 @@ import org.springframework.http.HttpStatus;
 import com.firedev.model.Anime;
 import com.firedev.model.Attributes;
 import com.firedev.model.DataResponse;
+import com.firedev.model.Pesquisa;
 import com.firedev.model.Especifico.AttributesCompleted;
 import com.firedev.model.Especifico.Data;
 import com.firedev.model.Especifico.DataObject;
+import com.firedev.repository.PesquisaRepository;
 import com.firedev.service.AnimeService;
 
 import io.restassured.http.ContentType;
 
 @WebMvcTest
+@DisplayName("Testes na camada REST")
 public class AnimeRestTest {
 	private Anime criaOnepice() {
 		Attributes atributos = new Attributes("One Piece");
@@ -37,6 +42,9 @@ public class AnimeRestTest {
 
 	@MockBean
 	private AnimeService animeService;
+	
+	@MockBean
+	private PesquisaRepository pesquisaRepository;
 
 	@BeforeEach
 	public void setup() {
@@ -119,7 +127,7 @@ public class AnimeRestTest {
 		.then()
 			.statusCode(HttpStatus.NOT_FOUND.value());
 	}
-	//Erro
+
 	@Test
 	public void deveRetornarSucesso_QuandoPesquisarPorUmAnime() {
 		Attributes atributos = new Attributes("One Piece");
@@ -139,7 +147,7 @@ public class AnimeRestTest {
 		.then()
 			.statusCode(HttpStatus.OK.value());
 	}
-	//ERRO 2
+	
 	@Test
 	public void deveRetornarNaoEncontrado_QuandoPesquisarPorUmAnime() {
 		
@@ -152,7 +160,7 @@ public class AnimeRestTest {
 		.then()
 			.statusCode(HttpStatus.NOT_FOUND.value());
 	}
-	//Categorias
+
 	@Test
 	public void deveRetornarSucesso_QuandoFiltraCategoria() {
 		Attributes atributos = new Attributes("One Piece");
@@ -173,7 +181,7 @@ public class AnimeRestTest {
 		.then()
 			.statusCode(HttpStatus.OK.value());
 	}
-	//CategoriaError
+
 	@Test
 	public void deveRetornarNaoEncontrado_QuandoFiltraCategoria() {
 		
