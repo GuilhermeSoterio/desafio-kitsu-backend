@@ -1,5 +1,6 @@
-com.firedev.firedev
+com.firedev
 com.firedev.model
 com.firedev.model.Especifico
+com.firedev.repository
 com.firedev.rest
 com.firedev.service

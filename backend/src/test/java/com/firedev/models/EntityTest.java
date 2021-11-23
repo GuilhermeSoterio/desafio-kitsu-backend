@@ -16,7 +16,7 @@ import com.firedev.model.Especifico.AttributesCompleted;
 import com.firedev.model.Especifico.Data;
 import com.firedev.model.Especifico.DataObject;
 
-
+@DisplayName("Testes na entidades, camada model")
 public class EntityTest {
 	
 	@Test
